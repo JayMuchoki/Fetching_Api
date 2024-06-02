@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weathers.css">
+</head>
+<body>
+    <div class="search_box">
+        <input type="text" placeholder="Enter city"  class="searchinput" >
+        <button class="searchbutton"><img src="./images/search.png" alt="" width="30"> </button>
+    </div>
+
+    <div class="card">
+        <div class="climateimage">
+            <img src="./images/sun.png" alt="" class="weatherclimate" width="200px">
+        </div>
+        <div class="cityinfo">
+            <p class="today">today</p>
+            <h1 class="city">Nairobi</h1>
+            <p  class="temp">Temperature 17°C</p>
+            <p  sky>Clear sky</p>
+        </div>
+    </div>
+    <div class="weeks">
+        <div class="wednesday">
+            <p class="day1">Wednesday</p>
+            <img src="./images/clouds.png" alt="" width="30">
+            <p>21°C</p>
+        </div>
+        <div class="thursday">
+            <p >Thursday</p>
+            <img src="./images/clouds.png" alt="" width="30">
+            <p>21°C</p>
+        </div>
+        <div class="friday">
+            <p>Friday</p>
+            <img src="./images/clouds.png" alt="" width="30">
+            <p>21°C</p>
+        </div>
+        <div class="saturday">
+            <p>Saturday</p>
+            <img src="./images/clouds.png" alt="" width="30">
+            <p>21°C</p>
+        </div>
+    </div>
+
+    <script>
+        const apikey="567712d46fe114f793e9b0c03bc9b8b9";
+        const apiurl="https://api.openweathermap.org/data/2.5/weather?units=metric&q="
+const weatherclimate=document.querySelector('.weatherclimate')
+        const searchbox=document.querySelector('.searchinput')
+        const buttonsearch=document.querySelector('.searchbutton')
+
+        async function checkweather(city){
+            const response=await fetch(apiurl +city +`&appid=${apikey}`)
+            const data= await response.json();
+            console.log(data)
+
+            document.querySelector('.city').innerHTML=data.name;
+            document.querySelector('.temp').innerHTML=Math.round(data.main.temp)
+             +"°C";
+
+             if(data.weather[0].main== 'Clouds'){
+                weatherclimate.src="images/clouds.png"
+             }else if(data.weather[0].main== 'Clear'){
+                weatherclimate.src="images/suncloud.png"
+             }else if(data.weather[0].main== 'Sun'){
+                weatherclimate.src="images/sun.png"
+             }else if(data.weather[0].main== 'Rain'){
+                weatherclimate.src="images/rain.png"
+             }
+
+
+        }
+        buttonsearch.addEventListener('click',()=>{
+            checkweather(searchbox.value);
+        })
+        
+
+    </script>
+</body>
+</html>

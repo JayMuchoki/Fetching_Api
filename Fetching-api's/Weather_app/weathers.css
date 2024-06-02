@@ -1,0 +1,100 @@
+body{
+    background-image:url("./images/sky.jpg") ;
+    background-repeat: no-repeat;
+     background-attachment:fixed;
+     background-position: center;
+     background-size: cover;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.search_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchinput{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    
+    border-radius: 30px;
+    
+}
+.searchbutton{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+   margin-left: 5px;
+    
+    border-radius: 100px;
+
+}
+.card{
+   
+    width: 50%;
+    color: #070707;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    background-color: rgba(173, 216, 230, 0.6); 
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+
+}
+.city{
+    color: black;
+}
+.weeks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    width: 50%;
+    margin-top: -30px;
+}
+.wednesday{
+    background-color: rgba(173, 216, 230, 2); 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.5px;
+    width: 55%;
+}
+.thursday{
+    
+        background-color: rgba(173, 216, 230, 2); 
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 0.5px;
+        width: 55%;
+    
+}
+.friday{
+    background-color: rgba(173, 216, 230, 2); 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.5px;
+    width: 55%;
+}
+.saturday{
+    background-color: rgba(173, 216, 230, 2); 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.5px;
+    width: 55%;
+}
