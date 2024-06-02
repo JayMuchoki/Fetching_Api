@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            flex-direction: column;
+
+        }
+        .heading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .searchbar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="heading">GITHUB SEARCH TOOL</h1>
+
+    <div class="searchbar">
+       <form action="">
+
+        <div class="textbox">
+            <input type="text" placeholder="" class="gitsearch">
+        </div>
+        <div class="button">
+            <button class="gitsearchbutton" onsubmit="getdetail()">search a Github User</button>
+        </div>
+       </form>
+
+   
+
+    </div>
+    <div class="userdetail">
+        <div class="profile">
+            <img src="./Screenshot (1).png" alt="" width="50px">
+        </div>
+        <div class="userinformation">
+            
+        </div>
+    </div>
+
+    <script> 
+        const url='https://api.github.com/users/JayMuchoki'
+async function getdetail(){
+    // const inputtext=document.querySelector('.gitsearch')
+    // const searchbtn=document.querySelector('.gitsearchbutton')
+    try {
+        const response=await fetch(url,{
+        headers:{
+            'Authorization':'Bearer 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'
+        }
+    })
+    if(!response.ok){
+        throw  new Error ("could not fetch resource")
+    }
+    const result= await response.json()
+   console.log(result)
+        
+    } catch (error) {
+        console.log("something went wrong")
+        
+    }
+ 
+   
+}
+getdetail()
+
+
+
+
+// inputtext.textContent=
+
+
+</script>
+</body>
+</html>
